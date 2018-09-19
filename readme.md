@@ -1,4 +1,4 @@
-## This repository utilized MongoDB database ##
+## This repository utilizes MongoDB database ##
 author: <stav0049@gmail.com>
 
 ## For GETs -> http://localhost:3000/tasks ##
