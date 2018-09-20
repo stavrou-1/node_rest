@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const Task = require('./api/models/todoListModel'); //created model loading here
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 4040;
+process.env.NODE_ENV === 'production';
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
@@ -19,18 +20,9 @@ routes(app); //register the route
 
 console.log('todo list RESTful API server started..');
 
-
 app.use(function(req, res) {
   res.status(404).send({url: req.originalUrl + ' not found'})
 });
-
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-}
-
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-})
 
 app.listen(port);
 
