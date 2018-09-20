@@ -1,4 +1,4 @@
-## This repository utilizes MongoDB database ##
+## This repository utilizes NodeJS, MongoDB database, Mlab on top of Heroku ##
 author: <stav0049@gmail.com>
 
 ## For GETs -> http://localhost:3000/tasks ##
@@ -10,6 +10,8 @@ author: <stav0049@gmail.com>
 3.) type 'mongo' at /todoListApi root
 4.) Able to use Postman to POST, GET, DELETE, PUT data
 `
+
+## To set scaling on our api application type: heroku ps:scale web=1 ##
 
 `To switch from developement mode to production mode type:
 
@@ -45,6 +47,7 @@ or ~
 ## For shelling new mongo db data ##
 ## visit: https://docs.mongodb.com/manual/reference/method/db.collection.insert/ ##
 
+`To insert a new data task manually into the Terminal type:`
 `db.tasks.insert(
    {
    "status": [
