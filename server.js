@@ -19,10 +19,19 @@ routes(app); //register the route
 
 console.log('todo list RESTful API server started..');
 
-app.listen(port);
 
 app.use(function(req, res) {
   res.status(404).send({url: req.originalUrl + ' not found'})
 });
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+})
+
+app.listen(port);
 
 module.exports = app;
