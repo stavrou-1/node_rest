@@ -11,6 +11,12 @@ author: <stav0049@gmail.com>
 4.) Able to use Postman to POST, GET, DELETE, PUT data
 `
 
+`To switch from developement mode to production mode type:
+
+------ NODE_ENV=production node server.js
+
+in terminal at project root.`
+
 ## For POSTS -> http://localhost:3000/tasks ##
 ## Click Body and then switch to x-www-form-urlencoded ##
 ## Add a key of 'name' and enter a value to its right. Click Send ##
