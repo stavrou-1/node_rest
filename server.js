@@ -25,3 +25,5 @@ app.listen(4040);
 app.use(function(req, res) {
   res.status(404).send({url: req.originalUrl + ' not found'})
 });
+
+module.exports = app;
