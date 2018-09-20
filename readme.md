@@ -15,3 +15,36 @@ author: <stav0049@gmail.com>
 ## Click Body and then switch to x-www-form-urlencoded ##
 ## Add a key of 'name' and enter a value to its right. Click Send ##
 ## Your new data will be posted to mongo database and the api's JSON will change ##
+
+`For shelling into mongo database:
+
+1.) See all your databases:
+----- show dbs
+
+2.) Select the database
+----- use your_database_name
+
+3.) Show the collections
+----- show collections
+
+This will list all the collections in your selected database.
+
+4.) See all the data
+----- db.collection_name.find()
+
+or ~
+
+----- db.collection_name.find().pretty()`
+
+## For shelling new mongo db data ##
+## visit: https://docs.mongodb.com/manual/reference/method/db.collection.insert/ ##
+
+`db.tasks.insert(
+   {
+   "status": [
+      "pending"
+    ],
+      "name": "sip on some soup",
+      "__v": 0
+   }
+)`

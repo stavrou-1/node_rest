@@ -1,5 +1,5 @@
 {
-  "name": "new_rest_api",
+  "name": "todoListApi",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -15,7 +15,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
-    "mongoose": "^5.2.15"
+    "mongoose": "^5.2.15",
+    "serverless-http": "^1.6.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"

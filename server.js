@@ -1,9 +1,10 @@
-var http = require('http');
-var express = require('express');
-var app = express();
-var mongoose = require('mongoose');
-var Task = require('./api/models/todoListModel'); //created model loading here
-var bodyParser = require('body-parser');
+const http = require('http');
+const express = require('express');
+const serverless = require('serverless-http');
+const app = express();
+const mongoose = require('mongoose');
+const Task = require('./api/models/todoListModel'); //created model loading here
+const bodyParser = require('body-parser');
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
@@ -19,7 +20,7 @@ routes(app); //register the route
 
 console.log('todo list RESTful API server started..');
 
-app.listen(3000);
+app.listen(4040);
 
 app.use(function(req, res) {
   res.status(404).send({url: req.originalUrl + ' not found'})
