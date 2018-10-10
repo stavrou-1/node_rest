@@ -3,7 +3,10 @@ const express = require('express');
 const serverless = require('serverless-http');
 const app = express();
 const mongoose = require('mongoose');
+const passport = require('passport');
+const localStrategy = require('passport-local').Strategy;
 const Task = require('./api/models/todoListModel'); //created model loading here
+const Sport = require('./api/models/sportsModel');
 const bodyParser = require('body-parser');
 mongoose.Promise = global.Promise;
 const port = process.env.PORT || 4040;
@@ -26,7 +29,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 var routes = require('./api/routes/todoListRoutes'); //importing route
+var sportsRoutes = require('./api/routes/sportsRoutes'); // sports route
 routes(app); //register the route
+sportsRoutes(app);
 
 console.log('todo list RESTful API server started..');
 

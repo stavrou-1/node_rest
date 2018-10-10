@@ -1,0 +1,84 @@
+{
+	"players": [
+		{   "name": "Kadeem Allen",
+			"position": "Guard",
+			"teamNum": 45
+		},
+		{   "name": "Aron Baynes",
+			"position": "Center",
+			"teamNum": 46
+		},
+		{   "name": "Jabari Bird",
+			"position": "Guard",
+			"teamNum": 26
+		},
+		{   "name": "Jaylen Brown",
+			"position": "Guard-Forward",
+			"teamNum": 7
+		},
+		{   "name": "Jonathan Gibson",
+			"position": "Guard",
+			"teamNum": 60
+		},
+		{   "name": "Gordon Hayward",
+			"position": "Forward",
+			"teamNum": 20
+		},
+		{   "name": "Al Horford",
+			"position": "Forward-Center",
+			"teamNum": 42
+		},
+		{   "name": "Kyrie Irving",
+			"position": "Guard",
+			"teamNum": 11
+		},
+		{   "name": "Shane Larkin",
+			"position": "Guard",
+			"teamNum": 8
+		},
+		{   "name": "Marcus Morris",
+			"position": "Forward",
+			"teamNum": 13
+		},
+		{   "name": "Semi Ojeleye",
+			"position": "Forward",
+			"teamNum": 37
+		},
+		{   "name": "Rodney Purvis",
+			"position": "Guard",
+			"teamNum": null
+		},
+		{   "name": "Terry Rozier",
+			"position": "Guard",
+			"teamNum": 12
+		},
+		{   "name": "Xavier Silas",
+			"position": "Guard",
+			"teamNum": 9
+		},
+		{   "name": "Marcus Smart",
+			"position": "Guard",
+			"teamNum": 36
+		},
+		{   "name": "Jayson Tatum",
+			"position": "Forward",
+			"teamNum": 0
+		},
+		{   "name": "Daniel Theis",
+			"position": "Forward-Center",
+			"teamNum": 27
+		},
+		{   "name": "Brad Wanamaker",
+				"position": "Guard",
+				"teamNum": 9
+		},
+		{   "name": "Robert Williams III",
+				"position": "Forward",
+				"teamNum": 44
+		},
+		{   "name": "Guerschon Yabusele",
+				"position": "Forward",
+				"teamNum": 30
+		}
+	]
+}

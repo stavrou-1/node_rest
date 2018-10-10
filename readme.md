@@ -11,9 +11,11 @@ author: <stav0049@gmail.com>
 4.) Able to use Postman to POST, GET, DELETE, PUT data
 `
 
+## Our production URL is https://todolistapi2.herokuapp.com/tasks ##
+
 ## To set scaling on our api application type: heroku ps:scale web=1 ##
 
-`To switch from developement mode to production mode type:
+`To switch from development mode to production mode type:
 
 ------ NODE_ENV=production node server.js
 
@@ -23,6 +25,8 @@ in terminal at project root.`
 ## Click Body and then switch to x-www-form-urlencoded ##
 ## Add a key of 'name' and enter a value to its right. Click Send ##
 ## Your new data will be posted to mongo database and the api's JSON will change ##
+
+## For SPORT POSTS -> http://localhost:3000/sports ##
 
 `For shelling into mongo database:
 
@@ -56,4 +60,21 @@ or ~
       "name": "sip on some soup",
       "__v": 0
    }
+)`
+## you can update json properties by inserting multiple $set statements ##
+`db.tasks.update(
+{ "_id" : ObjectId("5ba51438125bc74d0e94ae4b") },
+  {
+    $set: {
+      "name" : "light the house on fire"
+    },
+    $set: {
+      "__v" : 3
+    },
+    $set: {
+    "status" : [
+      "donso"
+      ]
+    }
+  }
 )`
