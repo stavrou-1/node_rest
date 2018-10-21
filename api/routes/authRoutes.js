@@ -2,7 +2,7 @@
 
 module.exports = function(app) {
   let authList = require('../controllers/authController'),
-      middlewares = require("../middleware/verifyToken");
+      middlewares = require("../middleware/verifyToken");// middleware to check if the token is valid or not.
 
   // auth here
   app.route('/register')
@@ -15,5 +15,5 @@ module.exports = function(app) {
     .get(authList.events);
 
   app.route('/special')
-    .get(authList.special);
+    .get(middlewares.verifyToken, authList.special);
 }

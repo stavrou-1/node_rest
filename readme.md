@@ -11,7 +11,17 @@ author: <stav0049@gmail.com>
 4.) Able to use Postman to POST, GET, DELETE, PUT data
 `
 
-## Our production URL is https://todolistapi2.herokuapp.com/tasks ##
+## Our production URL is https://todolistapi2.herokuapp.com 
+## Below are our endpoints
+
+## /tasks
+## /tasks:taskId
+## /sports
+## /sports:sportId
+## /register
+## /login
+## /special
+## /events
 
 ## To set scaling on our api application type: heroku ps:scale web=1 ##
 
