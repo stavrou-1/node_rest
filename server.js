@@ -27,9 +27,6 @@ app.use(function (req, res, next) {
   if (req.method === 'OPTIONS') {
     console.log('INSIDE OPTIONS NOW....');
     var headers = {};
-
-    // IE8 does not allow domains to be specific, just the *
-    // headers['Access-Control-Allow-Origin'] = req.headers.origin
     headers["Access-Control-Allow-Origin"] = "*";
     headers["Access-Control-Allow-Methods"] = "POST, GET, PUT, DELETE, OPTIONS";
     headers["Access-Control-Allow-Credentials"] = false;
@@ -38,25 +35,11 @@ app.use(function (req, res, next) {
     res.writeHead(200, headers);
     res.end();
   } else {
-
-    console.log('INSIDE ELSE OPTIONS NOW....');
-
-    // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-
-    // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
-
-    // to the API (e.g. in case you use sessions)
     res.setHeader('Access-Control-Allow-Credentials', false);
-
     res.setHeader('Access-Control-Max-Age', '86400');
-    // Set to true if you need the website to include cookies in the requests sent
-
-    // Request headers you wish to allow
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type,Authorization');
-
-    // Pass to next layer of middleware
     next();
   }
 });
