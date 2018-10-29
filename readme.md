@@ -71,7 +71,9 @@ or ~
       "__v": 0
    }
 )`
-## you can update json properties by inserting multiple $set statements ##
+
+
+`You can update json properties by inserting multiple $set statements`
 `db.tasks.update(
 { "_id" : ObjectId("5ba51438125bc74d0e94ae4b") },
   {

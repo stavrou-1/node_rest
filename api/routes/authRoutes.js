@@ -14,6 +14,13 @@ module.exports = function(app) {
   app.route('/events')
     .get(authList.events);
 
+  app.route('/users')
+    .get(authList.getAllUsers);
+
+  app.route('/user')
+    .post(middlewares.verifyToken, authList.getUserById)
+    .get(middlewares.verifyToken, authList.getUserById);
+
   app.route('/special')
     .get(middlewares.verifyToken, authList.special);
 }

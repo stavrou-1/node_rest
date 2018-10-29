@@ -2,7 +2,8 @@
 
 let mongoose = require('mongoose'),
     Authenticates = mongoose.model('Authenticate'),
-    jwt = require('jsonwebtoken');
+    jwt = require('jsonwebtoken'),
+    bcrypt = require('bcrypt');
 
 
 exports.createUser = (req, res) => {
@@ -19,6 +20,40 @@ exports.createUser = (req, res) => {
     });
 }
 
+// get logged in user by id
+exports.getUserById = (req, res) => {
+    let token = req.headers.authorization.split(' ')[1];
+    console.log('Printing token from getUserById() : ' + token);
+    jwt.verify(token, 'secretKey', (err, authData) => {
+        console.log('Printing authData object : ' + authData);
+        const theUser = authData.subject;
+        if (err) {
+            res.status(403).send({
+                error: 'Recieved an unauthorized request.'
+            });
+        } else {
+            Authenticates.findById(theUser, function(err, data) {
+                if (err) {
+                    res.send(err);
+                }
+                res.json({
+                    data
+                })
+            });
+        }
+    })
+}
+
+// get logged in user by id
+exports.getAllUsers = (req, res) => {
+    Authenticates.find({}, function(err, users) {
+        if (err)
+        res.send(err);
+        res.json(users);
+    });
+}
+
+// log in user
 exports.loginUser = (req, res) => {
     let userData = req.body;
     // we need to find the user in the db
@@ -32,6 +67,7 @@ exports.loginUser = (req, res) => {
                 if (user.password !== userData.password) {
                     res.status(401).send('Invalid password');
                 } else {
+                    console.log("USER IS LOGGED IN. Let\'s sign the payload.")
                     let payload = { subject: user._id };
                     let token = jwt.sign(payload, 'secretKey');
                     res.status(200).send({token});
