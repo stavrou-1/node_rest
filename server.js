@@ -19,7 +19,7 @@ if (env === 'development') {
   mongoose.connect('mongodb://127.0.0.1:27017/todoListApi', { keepAlive: true, keepAliveInitialDelay: 300000, useNewUrlParser: true }); // this is our local testing environment
 } else {
   console.log('Inside the production database');
-  mongoose.connect('mongodb://stav0049:Dante2010!@ds163822.mlab.com:63822/a1rest', {useNewUrlParser: true})
+  mongoose.connect('mongodb://stav0049:password@ds163822.mlab.com:63822/a1rest', {useNewUrlParser: true})
 }
 
 // Add headers
